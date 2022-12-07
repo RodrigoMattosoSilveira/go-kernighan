@@ -9,13 +9,13 @@ import (
 var args = []string{"command", "arg1", "arg2"}
 
 // !+bench
-func BencharkForLoop(b *testing.B) {
+func BenchmarkForLoop(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		ForLoop(args)
 	}
 }
 
-func BencharkJoinLoop(b *testing.B) {
+func BenchmarkJoinLoop(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		JoinLoop(args)
 	}
