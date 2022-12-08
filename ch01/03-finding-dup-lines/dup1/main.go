@@ -1,3 +1,5 @@
+// Reads text (lines) from stdio; when done, for each line with more than one instance, prints the number of instances
+// and the text
 package main
 
 import (
