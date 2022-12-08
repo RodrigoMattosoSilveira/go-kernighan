@@ -1,5 +1,5 @@
-// Reads text (lines) from stdio or from filename provided as arguments; when done, for each line with more than one
-// instance, prints the number of instances and the text
+// Reads text (lines) from stdio or from filename provided as arguments, in streaming move; when done, for each line
+// with more than one instance, prints the number of instances and the text
 package main
 
 import (
