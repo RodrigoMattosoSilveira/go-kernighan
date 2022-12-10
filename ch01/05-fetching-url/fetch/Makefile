@@ -8,4 +8,4 @@ $(EXECUTABLE): main.go
 	./$(EXECUTABLE) http://gopl.io
 
 run:
-	./$(EXECUTABLE) http://gopl.ioooo
+	./$(EXECUTABLE) https://www.htmlstrip.com/alexa-top-1000-most-visited-websites > data.txt
