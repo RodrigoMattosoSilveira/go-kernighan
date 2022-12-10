@@ -1,4 +1,4 @@
-// Prints the content at each specified URL
+// // Fetches URLs concurrently and reports their times and sizes
 package main
 
 import (
