@@ -1,9 +1,15 @@
-EXECUTABLE=exercise_1_8
+APP=exercise_1_8
+
+SECTION=$(shell pwd)
+BIN=$(SECTION)/../../../bin
+
 SOURCE=main.go
-OUTPUT=out.gif
+EXECUTABLE=$(BIN)/$(APP)
+#OUTPUT=out.gif
 
 # Build app
-$(EXECUTABLE): main.go
-	go build -o $(EXECUTABLE) $(main.go)
-	#./$(EXECUTABLE) http://opl.io gopl.io
-	./$(EXECUTABLE) http://GopL.io
+$(EXECUTABLE): $(SOURCE)
+	go build -o $(EXECUTABLE) $(SOURCE)
+
+run:
+	$(EXECUTABLE) google.com

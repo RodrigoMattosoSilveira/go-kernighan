@@ -1,25 +1,29 @@
+APP=server2
+
 SECTION=$(shell pwd)
 BIN=$(SECTION)/../../../bin
-APP=server2
+
 SOURCE=main.go
 EXECUTABLE=$(BIN)/$(APP)
-#OUTPUT=out.gif
+CLIENT=exercise_1_8
+#OUTPUT=NA
 
 # Build app
 $(EXECUTABLE): $(SOURCE)
 	go build -o $(EXECUTABLE) $(SOURCE)
 
+.PHONY: run
 run:
 	$(EXECUTABLE) &
 
-.PHONY: listen
-listen:
+.PHONY: my_port
+my_port:
 	lsof -i :8080
 
 .PHONY: slash
 slash:
-	$(BIN)/fetch http://localhost:8080/
+	$(BIN)/$(CLIENT) http://localhost:8080/
 
 .PHONY: count
 count:
-	$(BIN)/fetch http://localhost:8080/count
+	$(BIN)/$(CLIENT) http://localhost:8080/count

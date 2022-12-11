@@ -1,4 +1,4 @@
-// Prints the content at each specified URL
+// Prints the content at each specified URL, append TOKEN if necessary and does not buffer output
 package main
 
 import (

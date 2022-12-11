@@ -1,12 +1,23 @@
 // Minimal echo server
-// Launch
+// Build server
 //
-//	$ ./server1
+//	     ensure you are on the server3 folder: ~/projects/go-kernighan/ch01/07-web-server/server3
+//	     Ensure the Makefile APP attribute is set to: server3
+//			$ make
 //
-// Remove
+// Launch server
+//
+//	     $ ~/projects/go-kernighan/bin/server3 &, or
+//			$ make run
+//
+// Trigger server behavior
+//
+//	$ fetch :8080
+//
+// Remove server
 //
 //	Find out the port server2 is listening to
-//		sudo lsof -i :<PortNumber>
+//		$ sudo lsof -i :<PortNumber>
 //
 //	Kill the process
 //		$ kill -9 <<process id>>

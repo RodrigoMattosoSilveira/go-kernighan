@@ -1,4 +1,4 @@
-APP=server1
+APP=server3
 
 SECTION=$(shell pwd)
 BIN=$(SECTION)/../../../bin
@@ -16,6 +16,14 @@ $(EXECUTABLE): $(SOURCE)
 run:
 	$(EXECUTABLE) &
 
-.PHONY: client
-client:
-	$(BIN)/$(CLIENT) :8080
+.PHONY: my_port
+my_port:
+	lsof -i :8080
+
+.PHONY: slash
+slash:
+	$(BIN)/$(CLIENT) http://localhost:8080/
+
+.PHONY: count
+count:
+	$(BIN)/$(CLIENT) http://localhost:8080/count

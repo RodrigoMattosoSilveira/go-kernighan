@@ -1,12 +1,28 @@
 // Minimal echo server
-// Launch
+// Build server
 //
-//	$ ./server1
+//	     ensure you are on the server1 folder: ~/projects/go-kernighan/ch01/07-web-server/server1
+//	     Ensure the Makefile APP attribute is set: APP=server1
+//			$ make
 //
-// Remove
+// Launch server
 //
-//	Watch for the process ID output when you launch the server
-//	$ kill <<process id>>
+//	     $ ~/projects/go-kernighan/bin/server3 &, or
+//			$ make run
+//
+// Trigger server behavior
+//
+//	$ ~/projects/go-kernighan/bin/exercise_1_8 :8080, or
+//  $ make client -Dparm=:8080
+//
+// Remove server
+//
+//	Find out the port server2 is listening to
+//		$ sudo lsof -i :8080
+//
+//	Kill the process
+//		$ kill -9 <<process id>>
+
 package main
 
 import (

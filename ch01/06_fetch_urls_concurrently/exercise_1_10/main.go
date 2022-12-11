@@ -21,9 +21,14 @@ import (
 )
 
 func main() {
-	f, err := os.Create("data.txt")
+	curr_wd, err := os.Getwd()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "fetchall: %v\n", err)
+		fmt.Fprintf(os.Stderr, "exercise_1-11: %v\n", err)
+		os.Exit(1)
+	}
+	f, err := os.Create(curr_wd + "/../../../output/exercise_1-10.txt")
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "exercise_1-11: %v\n", err)
 		os.Exit(1)
 	}
 	defer f.Close()

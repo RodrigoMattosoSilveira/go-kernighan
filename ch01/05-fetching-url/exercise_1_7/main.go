@@ -1,4 +1,4 @@
-// Prints the content at each specified URL
+// Prints the content at each specified URL; send the results to os.Stdout without buffering them
 package main
 
 import (
