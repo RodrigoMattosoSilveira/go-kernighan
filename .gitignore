@@ -14,20 +14,10 @@
 # Dependency directories (remove the comment below to include it)
 # vendor/
 helloworld
-/ch01/04-animated-gifs/lissajours/lissajours
 /ch01/04-animated-gifs/lissajours/out.gif
-/ch01/04-animated-gifs/exercise_1_5/exercise_1_5
 /ch01/04-animated-gifs/exercise_1_5/out.gif
-/ch01/04-animated-gifs/exercise_1_6/exercise_1_6
 /ch01/04-animated-gifs/exercise_1_6/out.gif
-/ch01/05-fetching-url/exercise_1_7/exercise_1_7
-/ch01/05-fetching-url/exercise_1_8/exercise_1_8
-/ch01/05-fetching-url/fetch/fetch
-/ch01/05-fetching-url/exercise_1_9/exercise_1_9
-/ch01/06_fetch_urls_concurrently/fetchall/fetchal
 /ch01/06_fetch_urls_concurrently/exercise_1_10/data.txt
-/ch01/06_fetch_urls_concurrently/exercise_1_10/exercise_1_10
-/ch01/06_fetch_urls_concurrently/fetchall/fetchall
-/ch01/06_fetch_urls_concurrently/exercise_1_11/exercise_1_11
 /ch01/06_fetch_urls_concurrently/exercise_1_11/data.txt
 /ch01/05-fetching-url/fetch/data.txt
+/bin/
