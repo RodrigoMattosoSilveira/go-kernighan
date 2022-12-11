@@ -1,17 +1,41 @@
-// Lissajous generates GIF animations of random Lissajous figures.
-// run the application: $ go run main.go > out.gif
-// Open a browser and open the out.gif file
+// Minimal echo server, to serve a lissajour animated gif file
+// Build server
+//
+//	     ensure you are on the server1 folder: ~/projects/go-kernighan/ch01/07-web-server/server4
+//	     Ensure the Makefile APP attribute is set: APP=server4
+//			$ make
+//
+// Launch server
+//
+//	     $ ~/projects/go-kernighan/bin/server4 &, or
+//			$ make run
+//
+// Trigger server behavior
+//
+//	$ ~/projects/go-kernighan/bin/exercise_1_8 :8080, or
+//  $ make client -Dparm=:8080
+//
+// Remove server
+//
+//	Find out the port server4 is listening to
+//		$ sudo lsof -i :8080
+//
+//	Kill the process
+//		$ kill -9 <<process id>>
+// todo: refactor to use the original lissajous, instead of copying and pasting it here.
+
 package main
 
 import (
+	"fmt"
 	"image"
 	"image/color"
 	"image/gif"
 	"io"
+	"log"
 	"math"
 	"math/rand"
-	"os"
-	"time"
+	"net/http"
 )
 
 var palette = []color.Color{color.White, color.Black}
@@ -22,10 +46,16 @@ const (
 )
 
 func main() {
-	// The sequence of image is deterministic unless we seed
-	// the pseudo-random number generator using the current time.
-	rand.Seed(time.Now().UTC().UnixNano())
-	lissajous(os.Stdout)
+	//http.HandleFunc("/", handler) // each request call handler
+	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+		lissajous(w)
+	})
+	log.Fatal(http.ListenAndServe("localhost:8080", nil))
+}
+
+// handler echoes the Path component of the requested URL
+func handler(w http.ResponseWriter, r *http.Request) {
+	fmt.Fprintf(w, "URL Path = %q\n", r.URL.Path)
 }
 
 func lissajous(out io.Writer) {
