@@ -1,6 +1,9 @@
-package tempconv
+package tempconv1
 
-import "testing"
+import (
+	"fmt"
+	"testing"
+)
 
 // TestCtoF_0 validates that CtoF(100) is 212
 func TestCtoF_0(t *testing.T) {
@@ -19,6 +22,16 @@ func TestCtoF_100(t *testing.T) {
 	got := CtoF(testFor)
 	if got != expect {
 		t.Errorf("CtoF(%f) = %f; expect %f", testFor, got, expect)
+	}
+}
+
+// TestCToString validates the string conversion works
+func TestCelsius_String(t *testing.T) {
+	testFor := Celsius(20.0)
+	expect := fmt.Sprintf("%g°C", testFor)
+	got := testFor.CToString()
+	if got != expect {
+		t.Errorf("CToString(%f) = %s; expect %s", testFor, got, expect)
 	}
 }
 

@@ -1,5 +1,7 @@
 // Package tempconv performs Celsius and Fahrenheit temperature conversations
-package tempconv
+package tempconv1
+
+import "fmt"
 
 type Celsius float64
 type Fahrenheit float64
@@ -10,6 +12,7 @@ const (
 	Boiling       Celsius = 100
 )
 
-func CtoF(c Celsius) Fahrenheit { return Fahrenheit(c*9/5 + 32) }
+func CtoF(c Celsius) Fahrenheit      { return Fahrenheit(c*9/5 + 32) }
+func (c *Celsius) CToString() string { return fmt.Sprintf("%g°C", *c) }
 
 func FtoC(f Fahrenheit) Celsius { return Celsius((f - 32) * 5 / 9) }
