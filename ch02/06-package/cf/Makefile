@@ -1,4 +1,4 @@
-APP=echo06
+APP=cf
 
 # Our current location
 SECTION=$(shell pwd)
@@ -12,7 +12,7 @@ BIN_EXE=$(BIN_DIR)/$(APP)
 
 # Source
 SRC_DIR=.
-SRC_MAIN=./main.go
+SRC_MAIN=./cf.go
 SRC_FILES=$(shell find $(SRC_DIR) -type f \( -name "*.go" -o -name "*.go" \))
 OTHER_DEPS=
 
@@ -25,4 +25,4 @@ $(BIN_EXE): $(SRC_FILES) $(OTHER_DEPS)
 
 .PHONY: run
 run:
-	$(BIN_EXE) 23
+	$(BIN_EXE)
