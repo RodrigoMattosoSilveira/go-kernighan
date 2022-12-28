@@ -9,6 +9,8 @@ SECTION=$(shell pwd)
 # Executable
 BIN_DIR=$(SECTION)/../../../bin
 BIN_EXE=$(BIN_DIR)/$(APP)
+SVG=$(SECTION)/../../../output/$(APP).svg
+HTML=$(SECTION)/../../../output/$(APP).html
 
 # Source
 SRC_DIR=.
@@ -25,4 +27,5 @@ $(BIN_EXE): $(SRC_FILES) $(OTHER_DEPS)
 
 .PHONY: run
 run:
-	$(BIN_EXE)
+	$(BIN_EXE) > $(SVG)
+	echo '<img src="$(APP).svg">' > $(HTML)

@@ -1,4 +1,6 @@
-// Surface computes an SVG rendering of a 3-D surface function.
+// Surface computes an SVG rendering of a 3-D surface function. Added error handling to prevent infinite or IEEE 754
+// “not-a-number” values.
+// NOTE: I did not observe a difference between the original and this one;
 package main
 
 import (
