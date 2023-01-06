@@ -39,7 +39,8 @@ func main() {
 			if err != nil {
 				break
 			}
-			fmt.Printf("<polygon points='%g,%g %g,%g %g,%g %g,%g'/>\n",
+			//minZ := math.Max(az, bz, cz, dz)
+			fmt.Printf("<polygon points='%g,%g %g,%g %g,%g %g,%g' fill='blue'/>\n",
 				ax, ay, bx, by, cx, cy, dx, dy)
 		}
 	}
@@ -73,4 +74,16 @@ func f(x, y float64) (float64, error) {
 		return 0, fmt.Errorf("invalid poligon")
 	}
 	return math.Sin(r) / r, nil
+}
+
+func fill(z float64) string {
+	color := "white"
+	if z < 0.1 {
+		color = "blue"
+	} else {
+		if z > 0.9 {
+			color = "red"
+		}
+	}
+	return color
 }
